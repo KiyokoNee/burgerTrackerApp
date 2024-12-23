@@ -6,34 +6,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Burger Tracker</title>
+		<title>Edit Burger</title>
 		<link rel="stylesheet" href="/css/style.css" />
 	</head>
 	<body>
-		<h1>All Burgers</h1>
-		<table id="burgerDisplay">
-			<thead>
-				<tr>
-					<th>Burger Name</th>
-					<th>Restaurant Name</th>
-					<th>Rating (out of 5)</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="burger" items="${burgers}">
-					<tr>
-						<td><c:out value="${burger.burgerName}"></c:out></td>
-						<td><c:out value="${burger.restaurantName}"></c:out></td>
-						<td><c:out value="${burger.rating}"></c:out></td>
-						<td><a href="/burgers/${burger.id}/edit">Edit</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		
-		<h2>Add a Burger:</h2>
-		<form:form action="/burgers" method="post" modelAttribute="burger">
+		<div class="flex">
+			<h1>Edit Burger</h1>
+			<a href="/burgers">Go Back</a>
+		</div>
+		<form:form action="/burgers/${burger.id}" method="put" modelAttribute="burger">
 			<p>
 				<form:label path="burgerName">Burger Name</form:label>
 				<form:errors path="burgerName" />

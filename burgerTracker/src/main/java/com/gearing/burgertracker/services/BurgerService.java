@@ -27,19 +27,8 @@ public class BurgerService {
 		return optionalBurger.isPresent() ? optionalBurger.get() : null;
 	}
 	
-	public Burger updateBurger(Long id, String burgerName, String restarauntName, int rating, String notes) {
-		Optional<Burger> optionalBurger = burgerRepository.findById(id);
-		if(optionalBurger.isPresent()) {
-			Burger burger = optionalBurger.get();
-			burger.setBurgerName(burgerName);
-			burger.setRestaurantName(restarauntName);
-			burger.setRating(rating);
-			burger.setNotes(notes);
-			
-			return burger;
-		}
-		
-		return null;
+	public Burger updateBurger(Burger burger) {
+		return burgerRepository.save(burger);
 	}
 	
 	public void deleteBurgerById(Long id) {

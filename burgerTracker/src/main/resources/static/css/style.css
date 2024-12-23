@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, form {
+	width: 80%;
+}
+
+h1, h2 {
+	margin: 20px auto;
+	color: cornflowerblue;
+}
+
+form {
+	text-align: left;
+	margin: 0 auto;
+}
+
+#burgerDisplay {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.flex {
+	width: 80%;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex h1 {
+	margin: 0;
+}
+
+p {
+	width: 50%;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+input {
+	width: 70%;
+}
+
+tr {
+  height: 50px;
+}
+
+tr:nth-child(odd) {
+  background-color: aliceblue;
+}
