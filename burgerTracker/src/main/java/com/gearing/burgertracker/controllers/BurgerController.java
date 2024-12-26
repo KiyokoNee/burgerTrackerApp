@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import com.gearing.burgertracker.models.Burger;
 import com.gearing.burgertracker.services.BurgerService;
@@ -43,14 +42,14 @@ public class BurgerController {
 	}
 	
 	@GetMapping("/burgers/{id}/edit")
-	public String edit(@PathVariable("id") Long id, Model model) {
+	public String edit(@PathVariable Long id, Model model) {
 		Burger burger = burgerService.findBurger(id);
 		model.addAttribute("burger", burger);
 		return "update.jsp";
 	}
 	
 	@PutMapping("/burgers/{id}")
-	public String update(@Valid @ModelAttribute("burger") Burger burger, 
+	public String update(@Valid @ModelAttribute Burger burger, 
 			BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			model.addAttribute("burger", burger);
